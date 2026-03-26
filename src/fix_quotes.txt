@@ -1,0 +1,2 @@
+Lines to fix with curly quotes in handleCancelEdit calls:
+915, 1169, 1296, 1423, 1497, 2728, 2811, 2912, 2997, 3383, 3455, 3527, 3633, 3706, 3780, 3853, 3925, 3997

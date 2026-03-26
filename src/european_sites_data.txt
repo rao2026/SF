@@ -1,0 +1,51 @@
+  // Poland Sites
+  {
+    id: "PL001",
+    name: "Biała Podlaska Medical Center",
+    country: "Poland",
+    city: "Biała Podlaska",
+    address: "ul. Terebelska 57, 21-500 Biała Podlaska, Poland",
+    siteCode: "SITE-PL001",
+    status: "Eligible",
+    overallScore: 94,
+    priority: "High",
+    siteInvestigatorScore: 95,
+    staffingCapacityScore: 92,
+    patientEnrollmentScore: 95,
+    infrastructureScore: 94,
+    detailedAssessment: [
+      "Excellent COPD patient enrollment",
+      "Experienced pulmonology team",
+      "Modern spirometry facilities",
+      "Strong cardiovascular assessment capabilities",
+      "High retention rates in long-term studies"
+    ],
+    recommendation: {
+      action: "Highly recommended for immediate activation. Site demonstrates exceptional capabilities in respiratory trials with strong CV endpoints experience.",
+      nextSteps: "Send feasibility questionnaire, schedule site initiation visit, begin contract negotiations."
+    },
+    compliance: 94,
+    criticalRequirements: [
+      { text: "Experienced pulmonology PI with COPD trial background", points: 25 },
+      { text: "Access to COPD patients with CV comorbidities", points: 25 },
+      { text: "Spirometry and CV assessment capabilities", points: 25 },
+      { text: "Dedicated clinical research coordinators", points: 25 }
+    ],
+    activationReadiness: "Ready to Activate",
+    patientPoolSize: 180,
+    enrollmentRate: "5-7",
+    criticalGapsCount: 0,
+    startupTimeline: "4-5 weeks",
+    competitiveAdvantages: [
+      "Strong COPD patient database with documented CV history",
+      "Experienced in event-driven cardiovascular outcomes studies",
+      "98% retention rate in 36-month respiratory trials",
+      "Fast regulatory approval process in Poland",
+      "Cost-effective site operations"
+    ],
+    riskFactors: [],
+    strategicDirection: [
+      { category: "Revenue Focus" }
+    ],
+    shortfall: 10
+  }

@@ -1,0 +1,552 @@
+/**
+ * SITE DETAILS PAGE - CSS STYLES REFERENCE
+ * ========================================
+ * This file contains all the CSS classes and styles used in the Site Details page.
+ * Use this as a reference to isolate styles or create a scoped stylesheet.
+ */
+
+/* ========================================
+   1. COLOR VARIABLES (from globals.css)
+   ======================================== */
+:root {
+  /* Primary Brand */
+  --primary: #284497;
+  --primary-foreground: #ffffff;
+  
+  /* Secondary */
+  --secondary: #35bdd4;
+  --secondary-foreground: #ffffff;
+  
+  /* Status Colors */
+  --success: #40b54d;
+  --success-foreground: #ffffff;
+  --destructive: #e64244;
+  --destructive-foreground: #ffffff;
+  
+  /* Neutral/Muted */
+  --muted: #edf4fd;
+  --muted-foreground: #061e47;
+  --accent: #edf4fd;
+  --accent-foreground: #061e47;
+  
+  /* Background & Foreground */
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  
+  /* Borders & Inputs */
+  --border: rgba(40, 68, 151, 0.2);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --ring: #284497;
+  
+  /* Radius */
+  --radius: 0.5rem;
+  
+  /* Font Weights */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  
+  /* Typography */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+}
+
+/* ========================================
+   2. GLASSMORPHISM EFFECTS
+   ======================================== */
+
+/* Main container background - gradient with glassmorphism */
+.site-details-bg {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 50%, #f5f9ff 100%);
+  min-height: 100vh;
+}
+
+/* Glass card effect - primary */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(40, 68, 151, 0.1);
+}
+
+/* Glass card effect - stronger */
+.glass-card-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(40, 68, 151, 0.15);
+}
+
+/* Glass card effect - subtle */
+.glass-card-subtle {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 24px 0 rgba(40, 68, 151, 0.08);
+}
+
+/* ========================================
+   3. CUSTOM COMPONENTS
+   ======================================== */
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* ========================================
+   4. SPECIFIC COLOR VALUES USED
+   ======================================== */
+
+/* Background Colors */
+.bg-primary { background-color: #284497; }
+.bg-blue-50 { background-color: #eff6ff; }
+.bg-blue-100 { background-color: #dbeafe; }
+.bg-blue-500 { background-color: #3b82f6; }
+.bg-emerald-50 { background-color: #ecfdf5; }
+.bg-emerald-500 { background-color: #10b981; }
+.bg-red-50 { background-color: #fef2f2; }
+.bg-red-500 { background-color: #ef4444; }
+.bg-amber-50 { background-color: #fffbeb; }
+.bg-amber-500 { background-color: #f59e0b; }
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-gray-200 { background-color: #e5e7eb; }
+.bg-white { background-color: #ffffff; }
+
+/* Text Colors */
+.text-primary { color: #284497; }
+.text-blue-600 { color: #2563eb; }
+.text-blue-700 { color: #1d4ed8; }
+.text-emerald-600 { color: #059669; }
+.text-emerald-700 { color: #047857; }
+.text-red-600 { color: #dc2626; }
+.text-red-700 { color: #b91c1c; }
+.text-amber-600 { color: #d97706; }
+.text-amber-700 { color: #b45309; }
+.text-gray-600 { color: #4b5563; }
+.text-gray-700 { color: #374151; }
+.text-gray-800 { color: #1f2937; }
+.text-gray-900 { color: #111827; }
+.text-white { color: #ffffff; }
+
+/* Border Colors */
+.border-gray-200 { border-color: #e5e7eb; }
+.border-gray-300 { border-color: #d1d5db; }
+.border-blue-200 { border-color: #bfdbfe; }
+.border-emerald-200 { border-color: #a7f3d0; }
+.border-red-200 { border-color: #fecaca; }
+.border-amber-200 { border-color: #fde68a; }
+
+/* Opacity variations */
+.border-gray-300\/40 { border-color: rgba(209, 213, 219, 0.4); }
+.bg-white\/60 { background-color: rgba(255, 255, 255, 0.6); }
+.bg-white\/80 { background-color: rgba(255, 255, 255, 0.8); }
+
+/* ========================================
+   5. CHART & GAUGE SPECIFIC COLORS
+   ======================================== */
+
+/* Gauge Colors */
+.gauge-red { color: #ef4444; }
+.gauge-amber { color: #f59e0b; }
+.gauge-emerald { color: #10b981; }
+
+/* Age Group Chart Colors */
+.chart-male { background-color: #bdd7f1; } /* Male bars */
+.chart-female { background-color: #fbd5e6; } /* Female bars */
+
+/* Ethnicity Chart Colors */
+.chart-caucasian { background-color: #7ba7d6; }
+.chart-african { background-color: #f5a3cb; }
+.chart-asian { background-color: #a8d08d; }
+.chart-hispanic { background-color: #f4b183; }
+.chart-other { background-color: #d5a6bd; }
+
+/* ========================================
+   6. LAYOUT UTILITIES
+   ======================================== */
+
+/* Spacing values used */
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-5 { gap: 1.25rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-8 { gap: 2rem; }
+
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+
+/* Padding values used */
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.p-4 { padding: 1rem; }
+.p-5 { padding: 1.25rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+
+/* Padding specific sides */
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-\[15\%\] { padding-left: 15%; padding-right: 15%; }
+
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+
+.pl-2 { padding-left: 0.5rem; }
+
+/* Margin values used */
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+/* ========================================
+   7. BORDER & RADIUS
+   ======================================== */
+
+.rounded { border-radius: 0.25rem; }
+.rounded-md { border-radius: 0.375rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-full { border-radius: 9999px; }
+
+.rounded-t-lg { border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; }
+
+.border { border-width: 1px; }
+.border-b { border-bottom-width: 1px; }
+.border-l-4 { border-left-width: 4px; }
+
+/* ========================================
+   8. SHADOWS
+   ======================================== */
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   9. TYPOGRAPHY SIZES
+   ======================================== */
+
+.text-\[10px\] { font-size: 10px; }
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+
+.text-\[14px\] { font-size: 14px; }
+.text-\[28px\] { font-size: 28px; }
+.text-\[32px\] { font-size: 32px; }
+.text-\[56px\] { font-size: 56px; }
+
+/* Font weights */
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+/* ========================================
+   10. FLEXBOX & GRID
+   ======================================== */
+
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+
+/* Grid columns */
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+/* Flex direction */
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+
+/* Justify & Align */
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-center { align-items: center; }
+.items-stretch { align-items: stretch; }
+
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+.self-start { align-self: flex-start; }
+
+/* Flex sizing */
+.flex-1 { flex: 1 1 0%; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* ========================================
+   11. WIDTH & HEIGHT
+   ======================================== */
+
+.w-4 { width: 1rem; }
+.w-5 { width: 1.25rem; }
+.w-6 { width: 1.5rem; }
+.w-8 { width: 2rem; }
+.w-10 { width: 2.5rem; }
+.w-12 { width: 3rem; }
+.w-16 { width: 4rem; }
+.w-20 { width: 5rem; }
+.w-24 { width: 6rem; }
+.w-32 { width: 8rem; }
+
+.w-full { width: 100%; }
+
+.h-4 { height: 1rem; }
+.h-5 { height: 1.25rem; }
+.h-6 { height: 1.5rem; }
+.h-8 { height: 2rem; }
+.h-10 { height: 2.5rem; }
+.h-12 { height: 3rem; }
+.h-16 { height: 4rem; }
+.h-20 { height: 5rem; }
+.h-24 { height: 6rem; }
+.h-32 { height: 8rem; }
+.h-40 { height: 10rem; }
+
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+
+.max-w-7xl { max-width: 80rem; }
+
+/* ========================================
+   12. POSITION & Z-INDEX
+   ======================================== */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+.z-10 { z-index: 10; }
+.z-50 { z-index: 50; }
+
+/* ========================================
+   13. OPACITY & VISIBILITY
+   ======================================== */
+
+.opacity-0 { opacity: 0; }
+.opacity-50 { opacity: 0.5; }
+.opacity-60 { opacity: 0.6; }
+.opacity-80 { opacity: 0.8; }
+.opacity-100 { opacity: 1; }
+
+.hidden { display: none; }
+.overflow-hidden { overflow: hidden; }
+.overflow-y-auto { overflow-y: auto; }
+.overflow-visible { overflow: visible; }
+
+/* ========================================
+   14. TRANSITIONS & ANIMATIONS
+   ======================================== */
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-200 { transition-duration: 200ms; }
+.duration-300 { transition-duration: 300ms; }
+.duration-500 { transition-duration: 500ms; }
+
+/* ========================================
+   15. CURSOR TYPES
+   ======================================== */
+
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+/* ========================================
+   16. HOVER STATES
+   ======================================== */
+
+.hover\:opacity-80:hover { opacity: 0.8; }
+.hover\:opacity-90:hover { opacity: 0.9; }
+.hover\:bg-blue-50:hover { background-color: #eff6ff; }
+.hover\:bg-gray-50:hover { background-color: #f9fafb; }
+.hover\:bg-gray-100:hover { background-color: #f3f4f6; }
+
+/* ========================================
+   17. TEXT UTILITIES
+   ======================================== */
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.uppercase { text-transform: uppercase; }
+.capitalize { text-transform: capitalize; }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.whitespace-nowrap { white-space: nowrap; }
+
+/* ========================================
+   18. SPECIFIC INLINE STYLES USED
+   ======================================== */
+
+/* 
+Note: The following are inline styles used in the component.
+These cannot be easily converted to classes but are documented here for reference.
+
+1. Gauge Arc Drawing:
+   - Various SVG path coordinates for semi-circular gauge
+   - strokeDasharray and strokeDashoffset calculations
+   - Transform rotations for gauge needles
+
+2. Chart Bar Heights:
+   - Dynamic height percentages based on data values
+   - Example: style={{ height: `${value}%` }}
+
+3. Custom Colors:
+   - #7ba7d6 (male symbol in age chart)
+   - #f5a3cb (female symbol in age chart)
+   - #bdd7f1 (male bars)
+   - #fbd5e6 (female bars)
+   - Ethnicity colors: various pastel shades
+
+4. Text Shadows:
+   - textShadow: '0 0 1px rgba(40, 68, 151, 0.3)'
+
+5. Custom Gradients:
+   - background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 50%, #f5f9ff 100%)
+
+6. Backdrop Filters:
+   - backdrop-filter: blur(12px)
+   - -webkit-backdrop-filter: blur(12px)
+
+7. RGBA Colors:
+   - background: rgba(255, 255, 255, 0.65)
+   - background: rgba(40, 68, 151, 0.1)
+*/
+
+/* ========================================
+   19. MOTION/FRAMER MOTION STYLES
+   ======================================== */
+
+/* 
+Motion components use inline animation props:
+- initial={{ opacity: 0, y: 20 }}
+- animate={{ opacity: 1, y: 0 }}
+- transition={{ duration: 0.3 }}
+- whileHover={{ scale: 1.02 }}
+
+These are handled by the motion library and not CSS.
+*/
+
+/* ========================================
+   20. RESPONSIVE BREAKPOINTS (if needed)
+   ======================================== */
+
+/* 
+The component uses some responsive classes:
+- md:grid-cols-2 (applies grid-cols-2 at 768px and up)
+- lg:grid-cols-3 (applies grid-cols-3 at 1024px and up)
+
+Standard breakpoints:
+- sm: 640px
+- md: 768px
+- lg: 1024px
+- xl: 1280px
+- 2xl: 1536px
+*/
+
+/* ========================================
+   21. ICON SIZES (lucide-react)
+   ======================================== */
+
+/* Icons are sized with w-* and h-* classes:
+   - w-4 h-4: 1rem (16px)
+   - w-5 h-5: 1.25rem (20px)
+   - w-6 h-6: 1.5rem (24px)
+   - w-8 h-8: 2rem (32px)
+   - w-10 h-10: 2.5rem (40px)
+   - w-12 h-12: 3rem (48px)
+   - w-16 h-16: 4rem (64px)
+   - w-20 h-20: 5rem (80px)
+   - w-24 h-24: 6rem (96px)
+   - w-32 h-32: 8rem (128px)
+*/
+
+/* ========================================
+   END OF SITE DETAILS STYLES
+   ======================================== */

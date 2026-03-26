@@ -1,0 +1,465 @@
+/**
+ * SITE DETAILS PAGE - EXCLUSIVE CSS CLASSES ONLY
+ * ==============================================
+ * This file contains ONLY the CSS classes actually used in /components/dashboard/SiteDetailViewNew.tsx
+ * These are scoped and can be used without affecting other pages.
+ * Extracted on: 2026-02-18
+ */
+
+/* ========================================
+   SCOPED WRAPPER (Use this to scope all styles)
+   ======================================== */
+/*
+   Wrap your Site Details page with a class like "site-details-page"
+   to ensure these styles don't leak to other pages:
+   
+   <div className="site-details-page">
+     <SiteDetailView ... />
+   </div>
+*/
+
+/* ========================================
+   COLOR VALUES USED
+   ======================================== */
+.site-details-page {
+  /* Primary Colors */
+  --color-primary: #284497;
+  --color-primary-light: #35bdd4;
+  --color-text-dark: #061e47;
+  
+  /* Status Colors */
+  --color-green-50: #ecfdf5;
+  --color-green-200: #a7f3d0;
+  --color-green-700: #047857;
+  --color-amber-50: #fffbeb;
+  --color-amber-200: #fde68a;
+  --color-amber-700: #b45309;
+  --color-red-50: #fef2f2;
+  --color-red-200: #fecaca;
+  --color-red-700: #b91c1c;
+  
+  /* Chart Colors - Age Group */
+  --color-chart-male: #bdd7f1;
+  --color-chart-female: #fbd5e6;
+  --color-male-symbol: #7ba7d6;
+  --color-female-symbol: #f5a3cb;
+  
+  /* Chart Colors - Ethnicity */
+  --color-ethnicity-not-hispanic: #9ed4c6;
+  --color-ethnicity-hispanic: #d4bce6;
+  
+  /* Chart Colors - Race */
+  --color-race-native: #f4d5a6;
+  --color-race-asian: #d4b5d4;
+  --color-race-black: #b4d7b4;
+  --color-race-pacific: #a7dbd8;
+  --color-race-white: #a7c7e7;
+  
+  /* Grays */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  /* Blues */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  
+  /* Additional Colors */
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  
+  --color-purple-50: #faf5ff;
+  --color-purple-200: #e9d5ff;
+  --color-purple-600: #9333ea;
+  
+  --color-indigo-50: #eef2ff;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  
+  --color-rose-50: #fff1f2;
+  --color-rose-200: #fecdd3;
+  --color-rose-600: #e11d48;
+  
+  --color-orange-50: #fff7ed;
+  --color-orange-200: #fed7aa;
+  --color-orange-600: #ea580c;
+  
+  --color-teal-50: #f0fdfa;
+  --color-violet-50: #f5f3ff;
+  --color-slate-50: #f8fafc;
+  --color-pink-50: #fdf2f8;
+}
+
+/* ========================================
+   INLINE STYLES CONVERTED TO CLASSES
+   ======================================== */
+
+/* Background gradient for main container */
+.site-details-bg-gradient {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 50%, #f5f9ff 100%);
+}
+
+/* Glassmorphism effects */
+.site-details-glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.site-details-glass-card-subtle {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-details-glass-card-strong {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.site-details-glass-header {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(239, 246, 255, 0.6));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Animated background blobs */
+.site-details-bg-blob-1 {
+  background: rgba(40, 68, 151, 0.05);
+}
+
+.site-details-bg-blob-2 {
+  background: rgba(53, 189, 212, 0.04);
+}
+
+/* Age chart bar colors */
+.site-details-age-bar-male {
+  background: #bdd7f1;
+}
+
+.site-details-age-bar-female {
+  background: #fbd5e6;
+}
+
+/* Gender symbol colors */
+.site-details-male-symbol {
+  color: #7ba7d6;
+  text-shadow: 0 0 1px rgba(40, 68, 151, 0.3);
+}
+
+.site-details-female-symbol {
+  color: #f5a3cb;
+  text-shadow: 0 0 1px rgba(236, 72, 153, 0.3);
+}
+
+/* Ethnicity chart colors */
+.site-details-ethnicity-not-hispanic {
+  background-color: #9ed4c6;
+}
+
+.site-details-ethnicity-hispanic {
+  background-color: #d4bce6;
+}
+
+/* Race bar colors (for inline styles reference) */
+.site-details-race-native { background-color: #f4d5a6; }
+.site-details-race-asian { background-color: #d4b5d4; }
+.site-details-race-black { background-color: #b4d7b4; }
+.site-details-race-pacific { background-color: #a7dbd8; }
+.site-details-race-white { background-color: #a7c7e7; }
+
+/* ========================================
+   SPECIFIC MEASUREMENTS USED
+   ======================================== */
+
+/* Container widths */
+.site-details-w-90 { width: 90%; }
+.site-details-w-32rem { width: 32rem; }
+.site-details-w-80 { width: 20rem; }
+.site-details-w-40 { width: 10rem; }
+
+/* Heights */
+.site-details-h-96 { height: 24rem; }
+.site-details-h-40 { height: 10rem; }
+.site-details-h-32rem { height: 32rem; }
+.site-details-h-200px { height: 200px; }
+
+/* Font sizes used */
+.site-details-text-10px { font-size: 10px; }
+.site-details-text-11px { font-size: 11px; }
+.site-details-text-14px { font-size: 14px; }
+.site-details-text-26px { font-size: 26px; }
+.site-details-text-40px { font-size: 40px; }
+.site-details-text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+
+/* Border radius */
+.site-details-rounded-2xl { border-radius: 1rem; }
+.site-details-rounded-3xl { border-radius: 1.5rem; }
+
+/* Padding levels */
+.site-details-px-15pct { padding-left: 15%; padding-right: 15%; }
+
+/* Blur effects */
+.site-details-blur-3xl { filter: blur(64px); }
+
+/* ========================================
+   OPACITY & COLORS REFERENCE
+   ======================================== */
+
+/* Border color with opacity */
+.site-details-border-gray-200-60 {
+  border-color: rgba(229, 231, 235, 0.6);
+}
+
+.site-details-border-gray-200-40 {
+  border-color: rgba(229, 231, 235, 0.4);
+}
+
+.site-details-border-gray-200-50 {
+  border-color: rgba(229, 231, 235, 0.5);
+}
+
+.site-details-border-gray-300-40 {
+  border-color: rgba(209, 213, 219, 0.4);
+}
+
+.site-details-border-blue-200-30 {
+  border-color: rgba(191, 219, 254, 0.3);
+}
+
+.site-details-border-blue-200-40 {
+  border-color: rgba(191, 219, 254, 0.4);
+}
+
+.site-details-border-blue-200-50 {
+  border-color: rgba(191, 219, 254, 0.5);
+}
+
+.site-details-border-purple-200-30 {
+  border-color: rgba(233, 213, 255, 0.3);
+}
+
+.site-details-border-purple-200-40 {
+  border-color: rgba(233, 213, 255, 0.4);
+}
+
+.site-details-border-emerald-200-30 {
+  border-color: rgba(167, 243, 208, 0.3);
+}
+
+.site-details-border-emerald-200-70 {
+  border-color: rgba(167, 243, 208, 0.7);
+}
+
+.site-details-border-rose-200-30 {
+  border-color: rgba(254, 205, 211, 0.3);
+}
+
+.site-details-border-rose-200-70 {
+  border-color: rgba(254, 205, 211, 0.7);
+}
+
+.site-details-border-red-200-40 {
+  border-color: rgba(254, 202, 202, 0.4);
+}
+
+.site-details-border-red-200-50 {
+  border-color: rgba(254, 202, 202, 0.5);
+}
+
+.site-details-border-orange-200-50 {
+  border-color: rgba(254, 215, 170, 0.5);
+}
+
+/* Background with opacity */
+.site-details-bg-white-60 {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.site-details-bg-white-70 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.site-details-bg-white-80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.site-details-bg-transparent {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* Gradient backgrounds used in cards */
+.site-details-gradient-blue-card {
+  background: linear-gradient(to bottom right, rgba(239, 246, 255, 0.7), rgba(238, 242, 255, 0.6), #ffffff);
+}
+
+.site-details-gradient-purple-card {
+  background: linear-gradient(to bottom right, rgba(250, 245, 255, 0.7), rgba(245, 243, 255, 0.6), #ffffff);
+}
+
+.site-details-gradient-emerald-card {
+  background: linear-gradient(to bottom right, rgba(236, 253, 245, 0.8), rgba(240, 253, 250, 0.7), #ffffff);
+}
+
+.site-details-gradient-rose-card {
+  background: linear-gradient(to bottom right, rgba(255, 241, 242, 0.8), rgba(253, 242, 248, 0.7), #ffffff);
+}
+
+.site-details-gradient-blue-banner {
+  background: linear-gradient(to bottom right, rgba(239, 246, 255, 0.9), rgba(224, 231, 255, 0.8));
+}
+
+.site-details-gradient-slate-banner {
+  background: linear-gradient(to bottom right, rgba(248, 250, 252, 0.9), rgba(239, 246, 255, 0.9));
+}
+
+.site-details-gradient-blue-icon {
+  background: linear-gradient(to bottom right, rgba(40, 68, 151, 0.1), rgba(53, 189, 212, 0.1));
+}
+
+.site-details-gradient-primary-icon {
+  background: linear-gradient(to bottom right, #284497, #35bdd4);
+}
+
+.site-details-gradient-blue-solid-icon {
+  background: linear-gradient(to bottom right, #3b82f6, #4f46e5);
+}
+
+.site-details-gradient-blue-pill {
+  background: linear-gradient(to bottom right, rgba(191, 219, 254, 0.9), rgba(191, 219, 254, 0.7));
+}
+
+.site-details-gradient-orange-pill {
+  background: linear-gradient(to bottom right, rgba(254, 215, 170, 0.9), rgba(255, 237, 213, 0.7));
+}
+
+.site-details-gradient-red-pill {
+  background: linear-gradient(to bottom right, rgba(254, 202, 202, 0.9), rgba(254, 226, 226, 0.7));
+}
+
+/* ========================================
+   GAUGE COLORS (for reference)
+   ======================================== */
+/* Used in SVG gauge components */
+.site-details-gauge-track { stroke: #e5e7eb; }
+.site-details-gauge-low { stroke: #ef4444; }
+.site-details-gauge-medium { stroke: #f59e0b; }
+.site-details-gauge-high { stroke: #10b981; }
+
+/* ========================================
+   TEXT COLORS USED
+   ======================================== */
+.site-details-text-primary { color: #284497; }
+.site-details-text-dark { color: #061e47; }
+.site-details-text-gray-500 { color: #6b7280; }
+.site-details-text-gray-600 { color: #4b5563; }
+.site-details-text-gray-700 { color: #374151; }
+.site-details-text-gray-800 { color: #1f2937; }
+.site-details-text-gray-900 { color: #111827; }
+.site-details-text-blue-600 { color: #2563eb; }
+.site-details-text-sky-600 { color: #0284c7; }
+.site-details-text-sky-700 { color: #0369a1; }
+.site-details-text-sky-800 { color: #075985; }
+.site-details-text-emerald-600 { color: #059669; }
+.site-details-text-purple-600 { color: #9333ea; }
+.site-details-text-indigo-600 { color: #4f46e5; }
+.site-details-text-red-600 { color: #dc2626; }
+.site-details-text-rose-600 { color: #e11d48; }
+.site-details-text-orange-600 { color: #ea580c; }
+.site-details-text-green-700 { color: #15803d; }
+.site-details-text-amber-700 { color: #b45309; }
+.site-details-text-red-700 { color: #b91c1c; }
+
+/* ========================================
+   BACKGROUND COLORS USED
+   ======================================== */
+.site-details-bg-white { background-color: #ffffff; }
+.site-details-bg-gray-50 { background-color: #f9fafb; }
+.site-details-bg-gray-100 { background-color: #f3f4f6; }
+.site-details-bg-blue-50 { background-color: #eff6ff; }
+.site-details-bg-blue-100 { background-color: #dbeafe; }
+.site-details-bg-sky-100 { background-color: #e0f2fe; }
+.site-details-bg-sky-200 { background-color: #bae6fd; }
+.site-details-bg-green-50 { background-color: #ecfdf5; }
+.site-details-bg-emerald-50 { background-color: #ecfdf5; }
+.site-details-bg-amber-50 { background-color: #fffbeb; }
+.site-details-bg-red-50 { background-color: #fef2f2; }
+
+/* ========================================
+   BORDER COLORS USED
+   ======================================== */
+.site-details-border-gray-200 { border-color: #e5e7eb; }
+.site-details-border-gray-300 { border-color: #d1d5db; }
+.site-details-border-blue-200 { border-color: #bfdbfe; }
+.site-details-border-green-200 { border-color: #bbf7d0; }
+.site-details-border-emerald-200 { border-color: #a7f3d0; }
+.site-details-border-amber-200 { border-color: #fde68a; }
+.site-details-border-red-200 { border-color: #fecaca; }
+
+/* ========================================
+   IMPORTANT NOTES
+   ======================================== */
+
+/*
+1. INLINE STYLES IN THE COMPONENT:
+   - SVG paths and transforms (gauge needle rotation)
+   - Dynamic height percentages for bars: style={{ height: `${value}%` }}
+   - Dynamic width percentages for progress bars: style={{ width: `${value}%` }}
+   - Dynamic background colors from variables
+   
+2. MOTION/FRAMER MOTION ANIMATIONS:
+   - initial={{ opacity: 0, y: 20 }}
+   - animate={{ opacity: 1, y: 0 }}
+   - transition={{ duration: 0.6 }}
+   - These are handled by the motion library, not CSS
+
+3. TAILWIND CLASSES USED:
+   All standard Tailwind utility classes are used (flex, grid, gap-*, p-*, m-*, etc.)
+   These should already be available from your Tailwind setup.
+   
+4. CUSTOM SCROLLBAR:
+   The component uses .custom-scrollbar class which should be defined globally.
+
+5. TO USE THIS FILE:
+   - Import this CSS file in your SiteDetailViewNew component
+   - OR add a wrapper div with className="site-details-page" to scope all styles
+   - Use the .site-details-* classes where you need custom colors/styles
+*/
+
+/* ========================================
+   USAGE EXAMPLE
+   ======================================== */
+/*
+// In your component file:
+import './site-details-exclusive-styles.css';
+
+// Or wrap with scoped class:
+<div className="site-details-page">
+  <SiteDetailView ... />
+</div>
+
+// Individual usage:
+<div className="site-details-bg-gradient min-h-screen">
+  <div className="site-details-glass-card p-6">
+    <span className="site-details-text-primary">Content</span>
+  </div>
+</div>
+*/
